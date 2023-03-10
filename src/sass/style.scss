@@ -1,0 +1,462 @@
+//Общие настройки всего сайта
+// =======================
+body {
+	font-weight: 400;
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	line-height: 1.2;
+	color: #333;
+   font-size: 16px;
+	background-color: rgb(240, 240, 240);
+}
+.lock {
+	position: fixed;
+	overflow-y: hidden;
+	padding-right: 15px;
+}
+
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+// Для 1200 +
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+   padding: 0 15px;
+}
+
+// Стилизация кнопки
+.button {
+   font-size: 18px;
+   padding: 10px 20px;
+   background-color: #ffc007;
+   border-radius: 5px;
+   transition: transform .6s ease;
+
+   &:hover{
+      transform: scale(1.05);
+   }
+}
+// Блок с ошибкой
+.error-block {
+   font-size: 24px;
+   font-weight: 700;
+   width: 100%;
+   padding: 15px;
+   margin: 15px 0;
+   border-radius: 5px;
+   color: aliceblue;
+   background-color: #d2329d;
+   display: none;
+}
+// Заголовок
+.title {
+   font-size: 24px;
+   margin-bottom: 30px;
+}
+// =======================
+
+// Шапка 
+// =======================
+.header {margin-bottom: 50px;}
+.header__inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border: 1px solid silver;
+   border-top: none;
+   border-radius: 0 0 20px 20px;
+   padding: 15px;
+   background-color: #fff;
+   box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.logo {
+   display: flex;
+   gap: 0 10px;
+	align-items: center;
+
+   &__img {
+      width: 70px;
+		height: 70px;
+   }
+
+   &__name {
+      display: flex;
+      flex-direction: column;
+      font-size: 36px;
+		font-weight: 700;
+		line-height: 1.1;
+   }
+
+   &__sname {
+      color: #d2329d;
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 1.1;
+   }
+}
+
+.nav {
+   
+   // .nav__list
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+   }
+
+   // .nav__item
+   &__item {
+      font-size: 20px;
+   }
+
+   // .nav__link
+   &__link {
+      transition: color .6s ease;
+      &:hover {
+         color:#d2329d;
+      }
+   }
+}
+// =======================
+
+// Тело сайта
+// =======================
+.main {
+   flex: 1 0 auto;
+   margin-bottom: 50px;
+   // .main__inner
+   &__inner {
+      height: inherit;
+      padding: 0 15px;
+      display: flex;
+      gap: 0 30px
+
+   }
+
+   // .main__text
+   // &__text {
+   // }
+
+   // .main__title
+   &__title {
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+   }
+   // .main__content
+   &__content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+// боковая панель
+.aside {
+   max-width: 300px;
+   // .aside__info
+   &__info {
+      background-color: #ffc007;
+      color: #42410c;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+   }
+
+   // .aside__title
+   &__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+   }
+
+   // .aside__text
+   // &__text {
+   // }
+
+   // .aside__image
+   &__image {
+      width: 100%;
+      background-color: #fff;
+      border: 5px solid #fff;
+      border-radius: 5px;
+   }
+}
+
+// Форма регистрации
+.register-form {
+
+   // .register-form__label
+   &__label {
+      display: block;
+      margin-bottom: 10px;
+   }
+
+   // .register-form__input
+   &__input {
+      display: block;
+      width: 300px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      border: 1px solid silver;
+      margin-bottom: 30px;
+   }
+      // .register-form__error
+   &__error {
+      width: 300px;
+      background-color: rgb(233, 100, 100);
+      margin-bottom: 30px;
+   }
+   // .register-form__button
+   // &__button {
+   // }
+}
+// =======================
+
+// Пол сайта 
+// =======================
+.footer {
+
+   // .footer__inner
+   &__inner {
+      height: 50px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid silver;
+      border-bottom: none;
+      border-radius:  20px 20px 0 0 ;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   }
+   // .footer__text
+   // &__text {
+   // }
+}
+// =======================
+
+// Страница user-list
+// =======================
+.user {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #d2329d;
+   border-radius: 5px;
+   min-height: 50px;
+   padding: 20px;
+   margin-bottom: 30px;
+   font-size: 24px;
+   color: white;
+   // .user__info
+   &__info {
+      margin-right: 30px;
+   }
+}
+// =======================
+
+// Страница add article
+// =======================
+.article-form {
+   padding: 15px 0;
+   height: 100%;
+   display: flex;
+   flex-direction: column; 
+
+   // .article-form__label
+   &__label {
+      font-size: 18px;
+      line-height: 140%;
+   }
+
+   // .article-form__input
+   &__input {
+      background-color: #fff;
+      cursor: auto;
+      border: 1px solid silver;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+   }
+
+   // .article-form__textarea
+   &__textarea {
+      background-color: white;
+      resize: none;
+      cursor: auto;
+      border: 1px solid silver;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      flex: 0 0 20%;
+      // .article-form__textarea--main
+      &--main {
+         height: 200px;
+         flex: 1 0 auto;
+      }
+   }
+
+   // .article-form__error
+   &__error {
+      margin: 15px 0;
+   }
+
+   // .article-form__button
+   &__button {
+      
+      // .article-form__button:hover
+      &:hover {
+         transform: scale(1.05);
+      }
+   }
+}
+
+// =======================
+
+// Страница read article
+// =======================
+.article {
+   padding: 15px;
+   border-radius: 5px;
+   border: 1px solid silver;
+   background-color: #fff;
+   margin-bottom: 30px;
+   &:last-child {
+      margin-bottom: 0;
+   }
+   // .article__title
+   // &__title {
+      
+   // }
+
+   // .article__anons
+   &__anons {
+      font-size: 16px;
+      line-height: 120%;
+      margin-bottom: 10px;
+   }
+
+      // .article__text
+      &__text {
+         font-size: 16px;
+         line-height: 120%;
+         padding: 10px 0;
+      }
+
+   // .article__info
+   &__info {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+   }
+
+   // .article__author
+   &__author {
+      font-size: 14px;
+   }
+
+      // .article__date
+      &__date {
+         margin-left: 15px;
+      }
+
+   // .article__button
+   &__button {
+      padding: 5px 10px;
+
+   }
+}
+// =======================
+
+// Страница Chat
+// =======================
+
+.chat {
+width: 100%;
+min-height: 50vh;
+max-height: 70vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+   &__message {
+      font-size: 18px;
+      border-left:3px solid silver;
+      margin-bottom: 5px;
+      padding-left:10px;
+   }
+}
+.chat-messages {
+   background-color: #fff;
+   border-radius: 5px;
+   border: 2px solid #333;
+   padding: 5px;
+   overflow: auto;
+   height: 100%;
+
+   // .chat-messages__content
+   // &__content {
+   // }
+}
+.chat-input {
+   margin-top: 3px;
+}
+.chat-form {
+   display: flex;
+   justify-content: space-between;
+   gap: 0 5px;
+
+   // .chat-form__input
+   &__input {
+      color:#333;
+      background-color:#fff;
+      border: 2px solid #333;
+      border-radius: 5px;
+      height: 44px;
+      width: 100%;
+   }
+
+		// .chat-form__submit
+		&__submit {
+         background:#333;
+         color:#fff;
+		}
+}
+// =======================
+
+// Страница 
+// =======================
+
+
+// =======================
+
+// Страница 
+// =======================
+
+
+// =======================
+
+// Страница 
+// =======================
+
+
+// =======================
+
+// Страница 
+// =======================
+
+
+// =======================
+
+
+
+
+
+
+
+
