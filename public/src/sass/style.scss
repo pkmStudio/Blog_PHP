@@ -1,0 +1,62 @@
+// @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+body {
+	font-weight: 400;
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	line-height: 1.2;
+	color: #333;
+   font-size: 16px;
+	background-color: rgb(240, 240, 240);
+}
+.lock {
+	position: fixed;
+	overflow-y: hidden;
+	padding-right: 15px;
+}
+// Для 1200 +
+.container {
+	padding: 0 15px;
+	margin: 0 auto;
+	max-width: 1170px;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1199px) {
+   .container {
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 960px;
+   }
+}
+
+@media screen and (max-width: 991px) {
+   .container {
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 720px;
+   }
+}
+
+@media screen and (max-width: 767px) {
+   .container {
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 540px;
+   }
+}
+
+@media screen and (max-width: 576px) {
+   .container {
+      padding: 0 15px;
+      margin: 0 auto;
+      width: 100%;
+   }
+}

@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?php
+// Этот файл выводит нам все ошибки, которые могут возникнуть в коде. Этакий ручной Debugger.
+require 'app/lib/Dev.php';
+// Это автозагрузчик Классов.
+require 'autoload.php';
 
-<?php 
-   $websiteTitle = "myBlog";
-   require('./src/blocks/head.php');
-?>
-
-<body>
-   <div class="wrapper">
-      <!-- Шапка -->
-      <?php require('./src/blocks/header.php')?>
-      <!-- Контент -->
-      <?php require('./src/blocks/main.php')?>
-      <!-- Фуутер -->
-      <?php require('./src/blocks/footer.php')?>
-   </div>
+use app\core\Router;
 
 
-   <!-- Тут я работаю -->
+session_start();
+$router = new Router;
 
-   <!-- <script src="src/js/script.js"></script> -->
-</body>
-
-</html>
+$router->run();
