@@ -1,3 +1,7 @@
+// ============
+// Файл с блоками
+// ============
+
 .title {
    @include adaptiv-font (44, 28, 1);
    @include adaptiv-value( line-height, 60, 35, 1);
@@ -20,11 +24,6 @@
    object-fit: contain;
 }
 
-.title-section {
-   @include adaptiv-font (22, 18, 1);
-   vertical-align:baseline; //middle
-   line-height: 60px;
-}
 
 .sub-title {
    @include adaptiv-font (30, 22, 1);
@@ -32,5 +31,28 @@
    font-weight: 700;
    @media (max-width: $md3) {
       font-weight: 500;
+   }
+}
+
+.section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+   // .section-head__title
+   &__title {
+      @include adaptiv-font (22, 18, 1);
+      vertical-align:baseline; //middle
+      line-height: 60px;
+   }
+
+   // .section-head__link
+   &__link {
+      font-size: 16px;
+      color: #00A8CC;
+      transition: all 0.3s ease;
+      &:hover {
+         color: #007f9c;
+      }
    }
 }
