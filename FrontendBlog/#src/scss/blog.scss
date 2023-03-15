@@ -1,0 +1,56 @@
+// ============
+// Блог
+// ============
+
+.posts {
+   @include adaptiv-value(margin-bottom, 50, 30, 1);
+
+   // .posts__head
+   &__head {
+      @include adaptiv-value(margin-bottom, 50, 30, 1);
+   }
+
+   // .posts__post
+   &__post {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #E0E0E0;
+      &:not(:last-child) {
+         margin-bottom: 30px;
+      }
+   }
+}
+
+
+.post {
+   background-color: #fff;
+   @include adaptiv-value(padding, 20, 10, 1);
+
+   // .post__title
+   &__title {
+      margin-bottom: 20px;
+      @include adaptiv-value(margin-bottom, 20, 10, 1);
+   }
+
+   // .post__info
+   &__info {
+      display: flex;
+      gap: 0 20px;
+      align-items: center;
+      @include adaptiv-value(margin-bottom, 15, 10, 1);
+   }
+
+   // .post__data
+   &__data {
+      border-right: 1px solid #000;
+      padding-right: 20px;
+   }
+
+   // .post__tags
+   &__tags {
+      padding-right: 20px;
+   }
+
+   // .post__text
+   &__text {
+   }
+}

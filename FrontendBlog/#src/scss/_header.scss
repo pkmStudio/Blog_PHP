@@ -19,8 +19,8 @@
 	&__menu {
 	}
 }
-.menu {
 
+.menu {
 	// .menu__icon
 	&__icon {
 	}
@@ -47,7 +47,7 @@
 
 	// .menu__list
 	&__list {
-		@include adaptiv-value(min-height , 80, 50, 1);
+		@include adaptiv-value(height , 80, 50, 1);
 		color: $primary-color;
 		@media (min-width: $md3 + px) {
 			display: flex;
