@@ -1,3 +1,148 @@
-//============
+// ============
+// Представление
+// ============
+.greetings {
+   height: calc(100vh - 100px);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   gap: 40px 0;
+   @include adaptiv-value(margin-bottom, 50, 30, 1);
 
-//============
+   // .greetings__content
+   &__content {
+      @media (max-width: $md3 + px) {
+         margin-bottom: 27px;
+      }
+   }
+
+   // .greetings__title
+   &__title {
+      @include adaptiv-value(margin-bottom, 40, 20, 1);
+   }
+
+   // .greetings__text
+   &__text {
+   }
+
+   // .greetings__button
+   &__button {
+      align-self: flex-start;
+      @media (max-width: $md3 + px) {
+         align-self: center;
+      }
+   }
+}
+.content-greetings {
+   display: flex;
+   gap: 0 12%; /* 108/900 */
+   align-items: center;
+   @media (max-width: $md3 + px) {
+      flex-direction: column-reverse;
+   }
+
+   // .content-greetings__text-content
+   &__text-content {
+      flex: 1 1 75%; /* 600/800 */
+   }
+
+   // .content-greetings__photo
+   &__photo {
+      flex: 1 1 25%;
+      text-align: center;
+      @media (max-width: $md3 + px) {
+         flex: 0 0 auto;
+         width: 45.789474%; /* 174/380 */
+         margin-bottom: 34px;
+      }
+   }
+}
+
+// ============
+// Последние посты
+// ============
+
+.recent-posts {
+   margin: 0 -15px;
+   padding: 0 15px;
+   background-color: #EDF7FA;
+   @include adaptiv-value(margin-bottom, 50, 30, 1);
+
+   // .recent-posts__title
+   &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   // .recent-posts__title
+   &__title {
+   }
+
+   // .recent-posts__link
+   &__link {
+      font-size: 16px;
+      color: #00A8CC;
+      transition: all 0.3s ease;
+      &:hover {
+         color: #007f9c;
+      }
+   }
+
+   // .recent-posts__content
+   &__content {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: $md3 + px) {
+         flex-direction: column
+      }
+   }
+
+   // .recent-posts__post
+   &__post {
+      width: 48%; /* 414/900 */
+      margin-bottom: 30px;
+
+      @media (max-width: $md3 + px) {
+         width: 100%;
+      }
+   }
+}
+
+.post {
+   background-color: #fff;
+   @include adaptiv-value(padding, 20, 10, 1);
+
+   // .post__title
+   &__title {
+      margin-bottom: 20px;
+      @include adaptiv-value(margin-bottom, 20, 10, 1);
+   }
+
+   // .post__info
+   &__info {
+      display: flex;
+      gap: 0 20px;
+      align-items: center;
+      @include adaptiv-value(margin-bottom, 15, 10, 1);
+   }
+
+   // .post__data
+   &__data {
+      border-right: 1px solid #000;
+      padding-right: 20px;
+   }
+
+   // .post__tags
+   &__tags {
+      padding-right: 20px;
+   }
+
+   // .post__text
+   &__text {
+   }
+}
+
+// ============
+// Последние посты
+// ============

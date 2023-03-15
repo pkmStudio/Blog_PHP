@@ -23,14 +23,14 @@ $fontSize: 16;
 
 //<ПЕРЕМЕННЫЕ>============
 $minWidth: 320px; // мин размер
-$maxWidth: 1920; // полотно
-$maxWidthContainer: 1170; // огранич контейнер
-$md1: $maxWidthContainer + 12; // брейкпоинты для адаптива. сработает когда есть зазор
+$maxWidth: 1440; // полотно
+$maxWidthContainer: 1200; // огранич контейнер
+$md1: $maxWidthContainer + 15; // брейкпоинты для адаптива. сработает когда есть зазор
 $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
 
-$mainColor: #000;
+$mainColor: #21243D;
 @import "vars"; // переменнные (пока только цвета)
 //</ПЕРЕМЕННЫЕ>============
 
@@ -73,26 +73,17 @@ body {
 ._container {
 	max-width: #{$maxWidthContainer + px};
 	margin: 0 auto;
-	// @media (max-width: $md1 + px) {
-	@media (max-width: $md1 + px) {
-		max-width: 970px;
-	}
-	@media (max-width: $md2 + px) {
-		max-width: 750px;
-	}
-	@media (max-width: $md3 + px) {
-		max-width: none;
-		padding: 0 10px;
-	}
+	padding: 0 15px;
 }
 //</ОСНОВНАЯ СЕТКА>============
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>============
-@import "forms";
-@import "ui"; // готовые многоразовые блоки (ibg, btn, slider, )
+//@import "forms";
+//@import "ui"; // готовые многоразовые блоки (ibg, btn, slider, )
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>============
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>============
+@import "generalClasses"; // Общие классы блоков
 @import "header";
 @import "footer";
 @import "home"; // главная страница

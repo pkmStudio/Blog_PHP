@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+   "title": "Главная"
+})
+<body>
+   <div class="wrapper">
+            @@include('html/header.html', {})
+            <main class="page">
+               <div class="main__container _container">
+                  <section class="greetings">
+                     <div class="greetings__content content-greetings">
+                        <div class="content-greetings__text-content">
+                           <h1 class="greetings__title title">Привет, меня зовут Эдвард и я FullStack разработчик!
+                           </h1>
+                           <p class="greetings__text text">Люблю программировать, решать трудные задачи и стремлюсь стать лучшим. Очень люблю своих близких, кота и плавать.</p>
+                        </div>
+                        <div class="content-greetings__photo">
+                           <img class="content-greetings__img img" src="@img/logocat.png" alt="Мое фото">
+                        </div>
+                     </div>
+                     <button class="greetings__button button">Скачать резюме</button>
+                  </section>
+
+                  <section class="recent-posts">
+                     <div class="recent-posts__head">
+                        <h2 class="recent-posts__title title-section">Последние посты</h2>
+                        <a class="recent-posts__link" href="/blog">Посмотреть все</a>
+                     </div >
+                     <div class="recent-posts__content">
+                        <div class="recent-posts__post post">
+                           <a href="#"><h3 class="post__title sub-title">Как джуну найти работу?</h3><a >
+                           <div class="post__info">
+                                 <p class="post__data">15.03.2023</p>
+                                 <p class="post__tags">work, стремление</p>
+                           </div>
+                           <p class="post__text text">Казалось бы, в чем трудность? 
+                              Просто отзывайся на 100 вакансий в день, получи 99 отказов и 1 приглашение. Так 10 раз и найдешь 1 работу. 
+                              Но так-ли все просто? Давай разбираться...</p>
+                        </div>
+                        <div class="recent-posts__post post">
+                           <a href="#"><h3 class="post__title sub-title">Как джуну найти работу?</h3><a >
+                           <div class="post__info">
+                                 <p class="post__data">15.03.2023</p>
+                                 <p class="post__tags">work, стремление</p>
+                           </div>
+                           <p class="post__text text">Казалось бы, в чем трудность? 
+                              Просто отзывайся на 100 вакансий в день, получи 99 отказов и 1 приглашение. Так 10 раз и найдешь 1 работу. 
+                              Но так-ли все просто? Давай разбираться...</p>
+                        </div>
+                     </div>
+                  </section>
+
+               </div>
+            </main>
+            @@include('html/footer.html', {})
+   </div>
+   <script src="js/app.min.js"></script>
+</body>
+</html>
