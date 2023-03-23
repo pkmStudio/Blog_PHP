@@ -41,6 +41,15 @@ textarea {
 	font-family: $fontFamily;
 	font-size: inherit;
 }
+input,
+textarea {
+	&.auto {
+		overflow-y: hidden;
+	}
+	&:focus, &:hover {
+	box-shadow: 0 0 10px 1px #BBC1E1;
+}
+}
 input::-ms-clear {
    display: none;
 }

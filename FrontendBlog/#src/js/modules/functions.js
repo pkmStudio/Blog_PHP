@@ -18,29 +18,6 @@ export function isWebp() {
 
 // Все остальное требует или проверки или доработки
 //=================
-// function ibg() {
-// 	if (isIE()) {
-// 		let ibg = document.querySelectorAll("._ibg");
-// 		for (var i = 0; i < ibg.length; i++) {
-// 			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
-// 				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-// 			}
-// 		}
-// 	}
-// }
-// ibg();
-
-// window.addEventListener("load", function () {
-// 	if (document.querySelector('.wrapper')) {
-// 		setTimeout(function () {
-// 			document.querySelector('.wrapper').classList.add('_loaded');
-// 		}, 0);
-// 	}
-// });
-
-// let unlock = true;
-
-//=================
 //Menu Burger
 export function burgerMenu() {
 	let iconMenu = document.querySelector(".icon-menu");
@@ -58,4 +35,19 @@ export function burgerMenu() {
 function bodyLock() {
 	let body = document.querySelector("body");
 		body.classList.toggle("_lock");
+}
+
+// Автовысота textarea
+export function autoHeightTextarea() {
+   document.querySelectorAll("textarea").forEach((el) => {
+      el.style.height = el.setAttribute(
+         "style",
+         "height: " + el.scrollHeight + "px"
+      );
+      el.classList.add("auto");
+      el.addEventListener("input", (e) => {
+         el.style.height = "auto";
+         el.style.height = el.scrollHeight + "px";
+      });
+   });
 }

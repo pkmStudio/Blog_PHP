@@ -1,0 +1,59 @@
+// ============
+// Статья (Чтение)
+// ============
+
+.article {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+
+	// .article__head
+	&__head {
+	}
+
+	// .article__title
+	&__title {
+	}
+
+	// .article__body
+	&__body {
+	}
+
+	// .article__text
+	&__text {
+	}
+
+	// .article__footer
+	&__footer {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media (max-width: $md4 + px) {
+         flex-direction: column;
+      }
+	}
+
+	// .article__info
+	&__info {
+      @include adaptiv-font (16, 14, 1);
+      @include adaptiv-value(gap, 30, 15, 1);
+      flex: 1 0 42.735043%; /* 500/1170 */
+      display: flex;
+      align-items: center;
+	}
+
+	// .article__data
+	&__data {
+      @include adaptiv-value(padding-right, 30, 15, 1);
+      border-right: 1px solid #000;
+	}
+
+	// .article__tags
+	&__tags {
+	}
+
+	// .article__button
+	&__button {
+      @include adaptiv-font (16, 14, 1);
+	}
+}
