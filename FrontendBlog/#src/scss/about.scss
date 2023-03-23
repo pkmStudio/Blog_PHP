@@ -1,0 +1,54 @@
+// ============
+// Про меня
+// ============
+
+.about {
+	// .about__head
+	&__head {
+	}
+
+	// .about__title
+	&__title {
+      margin-bottom: 16px;
+	}
+
+	// .about__info
+	&__info {
+		@include adaptiv-value(padding, 20, 10, 1);
+		display: flex;
+		gap: 20px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #e0e0e0;
+		@media (max-width: $md3 + px) {
+			flex-direction: column-reverse;
+			align-items: center;
+		}
+	}
+
+	// .about__image
+	&__image {
+		flex: 0 1 28%;
+		max-width: 240px;
+		@media (max-width: $md3 + px) {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+	}
+
+	// .about__img
+	&__img {
+	}
+
+	// .about__content
+	&__content {
+		flex: 1 1 507px;
+		@media (max-width: $md3 + px) {
+			flex: 0 0 auto;
+		}
+	}
+
+   // .about__text
+	&__text {
+		@include adaptiv-value(margin-bottom, 7, 5, 1);
+	}
+}
