@@ -13,6 +13,6 @@ Here I post my progress in my studies and projects that I have implemented.
 
 Сейчас: Верстка макета
 
-![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blog.png)
+![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
 
 А ты, кто читает это, желаю почаще улыбаться и стремиться к совершенству!
