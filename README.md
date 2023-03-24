@@ -1,6 +1,6 @@
 
 
-# Блог v1.05
+# Блог v1.1.0
 
 
 I am learning Full Stack development.
