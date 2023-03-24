@@ -39,7 +39,7 @@ $mainColor: #21243D;
 
 body {
 	color: $mainColor;
-	background-color: #eee;
+	background-color: #f9f9f9;
 	// блокировка скрола
 	&._lock {
 		overflow: hidden;

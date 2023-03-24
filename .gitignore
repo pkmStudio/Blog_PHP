@@ -1,5 +1,7 @@
 /FrontendBlog/node_modules
 /FrontendBlog/gulp
+/FrontendBlog/FrontendBlog
 /FrontendBlog/*.js
 /FrontendBlog/*.json
-/FrontendBlog/*.txt
+*.txt
+**/*.txt

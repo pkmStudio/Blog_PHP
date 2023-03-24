@@ -1,3 +1,4 @@
+//=================
 // Проверка поодержки webp, добавления класса webp или no-webp для HTML
 export function isWebp() {
    // Проверка поддержки webp
@@ -15,8 +16,7 @@ export function isWebp() {
       document.documentElement.classList.add(className);
    });
 }
-
-// Все остальное требует или проверки или доработки
+//=================
 //=================
 //Menu Burger
 export function burgerMenu() {
@@ -30,13 +30,13 @@ export function burgerMenu() {
 		});
 	}
 }
-//=================
-// //BodyLock
+//BodyLock
 function bodyLock() {
 	let body = document.querySelector("body");
 		body.classList.toggle("_lock");
 }
-
+//=================
+//=================
 // Автовысота textarea
 export function autoHeightTextarea() {
    document.querySelectorAll("textarea").forEach((el) => {
@@ -51,3 +51,6 @@ export function autoHeightTextarea() {
       });
    });
 }
+//=================
+//=================
+// Здесь написать функцию AJAX запроса
