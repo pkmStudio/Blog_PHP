@@ -17,10 +17,11 @@ export function isWebp() {
    });
 }
 //=================
+
 //=================
 //Menu Burger
 export function burgerMenu() {
-	let iconMenu = document.querySelector(".icon-menu");
+	const iconMenu = document.querySelector(".icon-menu");
 	if (iconMenu != null) {
 		iconMenu.addEventListener("click", function () {
 			bodyLock();
@@ -31,26 +32,8 @@ export function burgerMenu() {
 	}
 }
 //BodyLock
-function bodyLock() {
+export function bodyLock() {
 	let body = document.querySelector("body");
 		body.classList.toggle("_lock");
 }
 //=================
-//=================
-// Автовысота textarea
-export function autoHeightTextarea() {
-   document.querySelectorAll("textarea").forEach((el) => {
-      el.style.height = el.setAttribute(
-         "style",
-         "height: " + el.scrollHeight + "px"
-      );
-      el.classList.add("auto");
-      el.addEventListener("input", (e) => {
-         el.style.height = "auto";
-         el.style.height = el.scrollHeight + "px";
-      });
-   });
-}
-//=================
-//=================
-// Здесь написать функцию AJAX запроса

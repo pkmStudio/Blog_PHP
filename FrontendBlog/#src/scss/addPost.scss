@@ -31,7 +31,7 @@
 	// .add-article__textarea
 	&__textarea {
 		@include adaptiv-font(16, 14, 1);
-		min-height: 300px;
+		min-height: 200px;
 		resize: none;
 		padding: 16px 20px;
 		border-radius: 10px;

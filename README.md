@@ -11,8 +11,10 @@ Here I post my progress in my studies and projects that I have implemented.
 
 Ниже (см.фото) ты увидишь текущий план работ. Он не окончательный и будет дополняться. 
 
-Сейчас: Разработка функционала клиентской части (JS).
-Также нарисовал план по BackEnd.
+Frontent первично завершен
+(Для себя: Добавить возможность комментировать статьи.)
+
+Сейчас: Разработка Админ Панели
 
 ![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
 
