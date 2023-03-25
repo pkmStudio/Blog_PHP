@@ -8,7 +8,7 @@
 
                      <div class="works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt="Мое фото"></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt="Мое фото"></picture>
                         </div>
                         <div class="work__content">
                            <h2 class="work__title sub-title"><a href="#">Блог</a></h2>
@@ -24,7 +24,7 @@
 
                      <div class="works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt=""></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt=""></picture>
                         </div>
                         <div class="work__content">
                            <h2 class="work__title sub-title"><a href="#">Интернет магазин</a></h2>
@@ -39,7 +39,7 @@
 
                      <div class="works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt=""></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt=""></picture>
                         </div>
                         <div class="work__content">
                            <h2 class="work__title sub-title"><a href="#">Шпаргалки по JS</a></h2>
@@ -54,7 +54,7 @@
 
                      <div class="works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt=""></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt=""></picture>
                         </div>
                         <div class="work__content">
                            <h2 class="work__title sub-title"><a href="#">Что-то еще</a></h2>

@@ -9,7 +9,7 @@
                            <p class="greetings__text text">Люблю программировать, решать трудные задачи и стремлюсь стать лучшим. Очень люблю своих близких, кота и плавать.</p>
                         </div>
                         <div class="content-greetings__photo">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="content-greetings__img img" src="img/logocat.png" alt="Мое фото"></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="content-greetings__img img" src="/public/src/img/logocat.png" alt="Мое фото"></picture>
                         </div>
                      </div>
                      <button class="greetings__button button">Скачать резюме</button>
@@ -47,11 +47,11 @@
                   <section class="best-works">
                      <div class="best-works__head section-head">
                         <h2 class="section-head__title">Популярные работы</h2>
-                        <a class="section-head__link" href="/work">Посмотреть все</a>
+                        <a class="section-head__link" href="/works">Посмотреть все</a>
                      </div >
                      <div class="best-works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt="Мое фото"></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt="Мое фото"></picture>
                         </div>
                         <div class="work__content">
                            <h3 class="work__title sub-title"><a href="#">Блог</a></h3>
@@ -66,7 +66,7 @@
                      </div>
                      <div class="best-works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt=""></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt=""></picture>
                         </div>
                         <div class="work__content">
                            <h3 class="work__title sub-title"><a href="#">Интернет магазин</a></h3>
@@ -80,7 +80,7 @@
                      </div>
                      <div class="best-works__work work">
                         <div class="work__image">
-                           <picture><source srcset="img/logocat.webp" type="image/webp"><img class="work__img img" src="img/logocat.png" alt=""></picture>
+                           <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="work__img img" src="/public/src/img/logocat.png" alt=""></picture>
                         </div>
                         <div class="work__content">
                            <h3 class="work__title sub-title"><a href="#">Шпаргалки по JS</a></h3>

@@ -20,7 +20,7 @@
                      </p>
                   </div >
                   <div class="about__image">
-                     <picture><source srcset="img/logocat.webp" type="image/webp"><img class="about__img img" src="img/logocat.png" alt="Мое фото"></picture>
+                     <picture><source srcset="/public/src/img/logocat.webp" type="image/webp"><img class="about__img img" src="/public/src/img/logocat.png" alt="Мое фото"></picture>
                   </div>
                </div>
 
