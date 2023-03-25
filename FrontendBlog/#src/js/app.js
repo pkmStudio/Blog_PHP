@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
    flsFunctions.burgerMenu();
    
    formsFunctions.autoHeightTextarea();
-   const forms = document.querySelectorAll('form');
-   forms.forEach(form => form.addEventListener('submit', formsFunctions.formSubmit));
+   formsFunctions.showPass();
+   formsFunctions.formSubmit();
 });

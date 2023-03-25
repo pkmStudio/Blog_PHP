@@ -1,0 +1,52 @@
+// ============
+// Вход в админку
+// ============
+
+.login {
+	// .login__title
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	// .login__form
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	// .login__label
+	&__label {
+		@include adaptiv-font(20, 16, 1);
+	}
+
+	// .login__input
+	&__input {
+		@include adaptiv-value(margin-bottom, 30, 15, 1);
+		@include adaptiv-font(20, 16, 1);
+		padding: 10px 15px;
+		border-radius: 10px;
+	}
+
+	// .login__showpass
+	&__showpass {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	// .login__checkbox
+	&__checkbox {
+		width: 30px;
+		height: 30px;
+	}
+
+	// .login__error
+	&__error {
+	}
+
+	// .login__button
+	&__button {
+		align-self: end;
+	}
+}

@@ -17,12 +17,11 @@ return [
 
    // Для гостей
 	'guest' => [
-      'register',
       'login',
 	],
 
    // Для админки
 	'admin' => [
-		//
+		'addPost',
 	],
 ];

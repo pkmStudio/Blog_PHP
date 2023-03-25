@@ -1,7 +1,10 @@
 //=================
 // Автовысота textarea
 export function autoHeightTextarea() {
-   document.querySelectorAll("textarea").forEach((el) => {
+   const textArea = document.querySelectorAll("textarea");
+   if (!textArea) {return 0;}
+
+   textArea.forEach((el) => {
       el.style.height = el.setAttribute(
          "style",
          "height: " + el.scrollHeight + "px"
@@ -13,27 +16,26 @@ export function autoHeightTextarea() {
       });
    });
 }
+
 //=================
-//=================
-// Функция AJAX запроса
-// ? Потом добавить возможность добавления комментариев к сатье
+// Функция showPass
+export function showPass() {
+   const showPassBox = document.querySelector('.login__checkbox');
+   if (!showPassBox) {return 0;}
 
-// const forms = document.querySelectorAll('form');
-// forms.forEach(form => form.addEventListener('submit', formSubmit));
-
-export function formSubmit(e) {
-   const form = e.target; //Сама форма
-   const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#'; //Куда
-   const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET'; // Какой метод
-   const formData = new FormData(form); // Что отправляем
-   const message = form.getAttribute('data-message'); //Сообщение по отправке
-   e.preventDefault(); // Отменяем перезагрузку
-   form.classList.add('_sending'); // Навешиваем класс "ОТПРАВКА"
-
-   sendingFormData(formAction, formData, formMethod).then(data => processFormData(data, form));
+   showPassBox.addEventListener('click', () => {
+      const passInput = document.querySelector('#password');
+      if (passInput.type === 'password' && showPassBox.checked) {
+         passInput.type = 'text';
+      } else {
+         passInput.type = 'password';
+      }
+   })
 }
 
-async function sendingFormData(url, data, method, message='') {
+//=================
+// Функция AJAX запроса
+async function sendingAJAX(url, data='', method='POST', message='') {
    const response = await fetch(url, {
       method: method,
       body: data
@@ -51,6 +53,27 @@ async function sendingFormData(url, data, method, message='') {
    }
 }
 
+//=================
+// Функции отправки формы
+export function formSubmit() {
+   const forms = document.querySelectorAll('form');
+   if (!forms) {return 0;}
+
+   forms.forEach(form => form.addEventListener('submit', formSend));
+}
+
+export function formSend(e) {
+   const form = e.target; //Сама форма
+   const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#'; //Куда
+   const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET'; // Какой метод
+   const formData = new FormData(form); // Что отправляем
+   const message = form.getAttribute('data-message'); //Сообщение по отправке
+   e.preventDefault(); // Отменяем перезагрузку
+   form.classList.add('_sending'); // Навешиваем класс "ОТПРАВКА"
+
+   sendingAJAX(formAction, formData, formMethod).then(data => processFormData(data, form));
+}
+
 function processFormData(data, form) {
    const errorBlock = form.querySelector('.error-block');
    form.reset();
@@ -63,3 +86,6 @@ function processFormData(data, form) {
       errorBlock.textContent += data.message;
    }
 }
+
+
+// ? Потом добавить возможность добавления комментариев к сатье

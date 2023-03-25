@@ -7,7 +7,10 @@ return [
    // Для всех
 	'all' => [
 		'index',
-      'contact',
+      'blog',
+      'works',
+      'about',
+      'post',
 	],
 
    // Для авторизованных

@@ -9,37 +9,55 @@
 */
 return 
 [
+    // MainController
     // Главная страница
     '' => [
         'controller' => 'main',
         'action' => 'index',
     ],
 
-    'contact' => [
+    // Блог (Статьи)
+    'blog' => [
         'controller' => 'main',
-        'action' => 'contact',
+        'action' => 'blog',
     ],
 
-    // Аккаунт
-    // Не реализован еще.
-    'account' => [
-        'controller' => 'account',
-        'action' => 'personal_account', // Или сделать 'lk'
+    // Работы
+    'works' => [
+        'controller' => 'main',
+        'action' => 'works',
+    ],
+    
+    // Про меня
+    'about' => [
+        'controller' => 'main',
+        'action' => 'about',
     ],
 
-    'account/login' => [
-        'controller' => 'account',
+    // Статья
+    'post' => [
+        'controller' => 'main',
+        'action' => 'post',
+    ],
+
+
+    // AdminController
+    'admin' => [
+        'controller' => 'admin',
         'action' => 'login',
     ],
 
-    'account/register' => [
-        'controller' => 'account',
-        'action' => 'register',
+    // Не уверен, что нужна такая старница
+    // ? Воозможно стоит сделать личный кабинет, где будет возможность, Добавление новой статьи, Добавления модераторов, Добавление новой работы
+    // ! Сделать Добавления модераторов, Добавление новой работы
+    'admin/logout' => [
+        'controller' => 'admin',
+        'action' => 'logout',
     ],
 
-    // Новости
-    'news/show' => [
-        'controller' => 'news',
-        'action' => 'show',
+    // Добавление Статьи
+    'admin/addpost' => [
+        'controller' => 'admin',
+        'action' => 'addPost',
     ],
 ];

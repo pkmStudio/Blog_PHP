@@ -1,30 +1,66 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/public/src/img/cat.ico" type="image/x-icon">
-    <!-- Подключаем шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;700&display=swap" rel="stylesheet" />
-    <!-- Обнуление CSS -->
-    <link rel="stylesheet" href="/public/src/css/zero.css">
-    <link rel="stylesheet" href="/public/src/css/style.css">
-    <title><?=$title;?></title>
+   <!-- тип документа и кодировка. как обработать -->
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <!-- область просмотра - мобильная отзывчивость. Физическая ширина устройства(отл для мобил), макс. масштаб, масштабируется пользователем -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   <meta name="author" content="pmkStudio Ed" />
+   <!-- описание(150 символов). для поисковых систем - сниппет поисковой выдачи. Также SEO. -->
+   <meta name="description" content="Блог о том, какие мысли посещают будущего программиста" />
+   <!-- для поисковых систем. указания ключевых слов на странице -->
+   <meta name="keywords" content="Блог, pmkStudio, blog, fullstack, development, roadmap" />
+   <!-- для поисковых роботов. индексировать страницы, отношения к ссылкам на странице(проиндексирована, перейти по ссылкам) -->
+   <meta name="robots" content="index,follow" />
+   <!-- иконка -->
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+   <!-- подключение стилей CSS -->
+   <link rel="stylesheet" href="/public/src/css/style.min.css" />
+   <!-- названия страницы. для поисковых систем. названия закладки -->
+   <title><?= $title; ?></title>
 </head>
 
 <body>
+   <div class="wrapper">
+      
+      <header class="header">
+         <div class="header__container _container">
+            <div class="header__body">
+               <div class="header__menu menu">
+                  <!-- Меню Бургер -->
+                  <button class="menu__icon icon-menu" type="button">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </button>
+                  <!-- Навигация меню -->
+                  <nav class="menu__body">
+                     <ul class="menu__list">
+                        <li class="menu__item"><a class="menu__link menu__link--active" href="/home.html">Главная</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/blog.html">Блог</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/works.html">Работы</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/about.html">Про меня</a></li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </header>
 
-    <?=$content;?>
+      <?= $content; ?>
 
-    <!-- Библиотека JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      <footer class="footer">
+         <div class="footer__container _container">
+            <div class="footer__body">
+               <p>Copyright ©2023 All rights reserved </p>
+            </div>
+         </div>
+      </footer>
 
-
-    <!-- Тут я работаю -->
-    <script src="/public/src/js/script.js"></script>
+   </div>
+   <!-- Тут я работаю -->
+   <script src="js/app.min.js"></script>
 </body>
 
 </html>
