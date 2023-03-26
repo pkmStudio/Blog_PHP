@@ -3,7 +3,7 @@
                <div class="main__container _container">
                   <section class="login">
                      <h1 class="login__title title">Вход в админпанель</h1>
-                     <form class="login__form" action="/login" method="POST" data-message="Что-то пока не придумал">
+                     <form class="login__form" action="/admin" method="POST" data-message="Что-то пока не придумал">
                         <label class="login__label" for="login">Введите логин</label>
                         <input class="login__input" id="login" name="login" type="text">
 

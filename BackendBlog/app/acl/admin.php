@@ -7,7 +7,6 @@ return [
 
    // Для всех
 	'all' => [
-		//
 	],
 
    // Для авторизованных
@@ -23,5 +22,11 @@ return [
    // Для админки
 	'admin' => [
 		'addPost',
+		'addWork',
+		'logout',
+		'editPost',
+		'deletePost',
+		'editWork',
+		'deleteWork',
 	],
 ];

@@ -52,11 +52,11 @@ abstract class Controller
 			return true;
 		}
         // Делаем проверку, если страница для авторизованных и есть авторизация.
-        elseif (isset($_SESSION['authorize']['id']) and $this->isAcl('authorize')) {
+        elseif (isset($_SESSION['authorize']['login']) and $this->isAcl('authorize')) {
 			return true;
 		}
         // Делаем проверку, если страница для гостей и нет авторизации.
-		elseif (!isset($_SESSION['authorize']['id']) and $this->isAcl('guest')) {
+		elseif (!isset($_SESSION['authorize']['login']) and $this->isAcl('guest')) {
 			return true;
 		}
         // Делаем проверку, если страница для админа и сессия админ.

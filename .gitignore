@@ -3,5 +3,5 @@
 /FrontendBlog/FrontendBlog
 /FrontendBlog/*.js
 /FrontendBlog/*.json
-*.txt
-**/*.txt
+/FrontendBlog/howtouse.txt
+/BackendBlog/.vscode

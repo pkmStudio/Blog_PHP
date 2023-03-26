@@ -10,6 +10,7 @@
 return 
 [
     // MainController
+    
     // Главная страница
     '' => [
         'controller' => 'main',
@@ -42,6 +43,8 @@ return
 
 
     // AdminController
+
+    // Вход в Админпанель
     'admin' => [
         'controller' => 'admin',
         'action' => 'login',
@@ -50,14 +53,45 @@ return
     // Не уверен, что нужна такая старница
     // ? Воозможно стоит сделать личный кабинет, где будет возможность, Добавление новой статьи, Добавления модераторов, Добавление новой работы
     // ! Сделать Добавления модераторов, Добавление новой работы
-    'admin/logout' => [
+    'logout' => [
         'controller' => 'admin',
         'action' => 'logout',
     ],
 
     // Добавление Статьи
-    'admin/addpost' => [
+    'addpost' => [
         'controller' => 'admin',
         'action' => 'addPost',
     ],
+
+    // Редактирование Статьи
+    'editpost' => [
+        'controller' => 'admin',
+        'action' => 'editPost',
+    ],
+
+    // Удаление Статьи
+    'deletepost' => [
+        'controller' => 'admin',
+        'action' => 'deletePost',
+    ],
+
+    // Добавление Работы
+    'addwork' => [
+        'controller' => 'admin',
+        'action' => 'addWork',
+    ],
+
+    // Редактирование Работы
+    'editwork' => [
+        'controller' => 'admin',
+        'action' => 'editWork',
+    ],
+
+    // Удаление Работы
+    'deletework' => [
+        'controller' => 'admin',
+        'action' => 'deleteWork',
+    ],
+
 ];

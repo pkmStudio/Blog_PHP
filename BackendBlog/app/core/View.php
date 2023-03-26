@@ -65,9 +65,9 @@ class View
     }
 
     // Эта функция по окончанию AJAX отправляет отчет.
-    public function message($status, $message)
+    public function message($result)
     {
-        exit (json_encode(['status' => $status, 'message' => $message]));
+        exit (json_encode($result));
     }
 }
 
