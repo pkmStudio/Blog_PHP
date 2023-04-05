@@ -2,6 +2,7 @@
 // Файл с блоками
 // ============
 
+// Заголовки, Заголовки второго типа, Общий текст
 .title {
    @include adaptiv-font (44, 28, 1);
    @include adaptiv-value( line-height, 60, 35, 1);
@@ -27,6 +28,7 @@
    line-height: 120%;
 }
 
+// UI 
 .button {
    padding: 0.5em 1em;
    border-radius: 0.5em;
@@ -41,30 +43,7 @@
    object-fit: contain;
 }
 
-.section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-   // .section-head__title
-   &__title {
-      @include adaptiv-font (22, 18, 1);
-      vertical-align:baseline; //middle
-      line-height: 60px;
-   }
-
-   // .section-head__link
-   &__link {
-      font-size: 16px;
-      color: #00A8CC;
-      transition: all 0.3s ease;
-      &:hover {
-         color: #007f9c;
-      }
-   }
-}
-
-
+// Отправка формы
 form::after {
    content: "Идет отправка..";
    padding-top: calc(100vh/2);
@@ -86,4 +65,44 @@ form._sending::after{
    visibility: visible;
 }
 .error-block {
+}
+
+// Подсказка
+[data-title] {position: relative;}
+[data-title]::after {
+   position: absolute; 
+   z-index: 1;
+   top: 40px;
+   left: 0;
+}
+[data-title]::after {
+   content: attr(data-title); /* Выводим текст */
+   background-color: rgba(165, 42, 135, 0.9);
+   color: #b3b3b3;
+   opacity: 0;
+   transition: 1s;
+   pointer-events: none;
+   width: 200px;
+   padding: 0.5em;
+   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+[data-title]:hover::after {opacity: 1;} 
+
+
+// Показать пароль
+.showpass {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+
+   // .showpass__label
+	&__label {
+		@include adaptiv-font(20, 16, 1);
+	}
+
+	// .showpass__checkbox
+	&__checkbox {
+		width: 30px;
+		height: 30px;
+	}
 }

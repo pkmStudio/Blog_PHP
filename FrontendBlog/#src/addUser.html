@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+   "title": "Блог"
+})
+<body>
+   <div class="wrapper">
+            @@include('html/header.html', {})
+            <div class="page">
+               <div class="_container _admin">
+                  <!-- Боковая панель Админки -->
+                  @@include('html/aside.html', {})
+                  <main>
+                     <div class="main__container">
+                        <section class="add-user">
+                           <h1 class="add-user__title title">Добавление анонса работы</h1>
+                           <form class="add-user__form" action="/add" method="POST" data-message="user">
+                              <label class="add-user__label" for="userName">Введите Имя пользователя</label>
+                              <input class="add-user__input" id="userName" name="userName" type="text">
+      
+                              <label class="add-user__label" for="userLogin">Введите Логин</label>
+                              <input class="add-user__input" id="userLogin" name="userLogin" type="text">
+                           
+                              <label class="add-user__label" for="password">Введите пароль</label>
+                              <input class="add-user__input" id="password" name="password" type="password">
+
+                              <label class="add-user__label" for="repeatPassword">Повторите пароль</label>
+                              <input class="add-user__input" id="repeatPassword" name="repeatPassword" type="password">
+
+                              <div class="showpass">
+                                 <label class="showpass__label" for="showpass">Показать пароль</label>
+                                 <input class="showpass__checkbox" id="showpass" name="showpass" type="checkbox">
+                              </div> 
+                              
+                              <div class="add-user__error error-block"></div>
+                              
+                              <button class="add-user__button button" type="submit">Добавить анонс работы</button>
+                           </form>
+                        </section>
+                     </div>
+                  </main>
+               </div >
+            </div >
+            @@include('html/footer.html', {})
+   </div>
+   <script src="js/app.min.js"></script>
+</body>
+</html>

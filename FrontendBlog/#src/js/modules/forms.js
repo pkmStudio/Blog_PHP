@@ -20,7 +20,7 @@ export function autoHeightTextarea() {
 //=================
 // Функция showPass
 export function showPass() {
-   const showPassBox = document.querySelector('.login__checkbox');
+   const showPassBox = document.querySelector('.showpass__checkbox');
    if (!showPassBox) {return 0;}
 
    showPassBox.addEventListener('click', () => {

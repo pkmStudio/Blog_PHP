@@ -1,0 +1,38 @@
+// ============
+// Статья (Добавление)
+// ============
+
+.add-work {
+	// .add-work__title
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	// .add-work__form
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	// .add-work__label
+	&__label {
+		@include adaptiv-font(20, 16, 1);
+	}
+
+	// .add-work__input
+	&__input {
+		@include adaptiv-value(margin-bottom, 30, 15, 1);
+		@include adaptiv-font(16, 14, 1);
+		padding: 10px 15px;
+		border-radius: 10px;
+	}
+
+	// .add-work__error
+	&__error {
+	}
+
+	// .add-work__button
+	&__button {
+	}
+}

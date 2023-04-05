@@ -62,6 +62,33 @@
 }
 
 // ============
+// Голова секций
+// ============
+
+.section-head {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+// .section-head__title
+&__title {
+   @include adaptiv-font (22, 18, 1);
+   vertical-align:baseline; //middle
+   line-height: 60px;
+}
+
+// .section-head__link
+&__link {
+   font-size: 16px;
+   color: #00A8CC;
+   transition: all 0.3s ease;
+   &:hover {
+      color: #007f9c;
+   }
+}
+}
+
+// ============
 // Последние посты
 // ============
 

@@ -1,0 +1,56 @@
+//============
+.aside {
+   padding-right: 15px;
+   padding-bottom: 15px;
+   border-right: 3px solid #444;
+   border-bottom: 3px solid #444;
+   border-radius: 0 0 10px 0;
+   
+   // .aside__header
+   &__header {
+      margin-bottom: 30px;
+   }
+
+   // .aside__title
+   &__title {
+   }
+
+   // .aside__body
+   &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   // .aside__item
+   &__item {
+   }
+
+   // .aside__item-name
+   &__item-name {
+      margin-bottom: 10px;
+   }
+
+   // .aside__button
+   &__button {
+      align-self: flex-end;
+      text-align: center;
+      font-size: 16px;
+   }
+}
+
+//============
+
+._admin {
+   width: 100%;
+   display: flex;
+   gap: 30px;
+}
+
+._admin main {
+   flex: 1 1 auto;
+}
+
+._admin aside {
+   align-self: flex-start;
+}
