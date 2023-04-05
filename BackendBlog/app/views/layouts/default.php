@@ -47,9 +47,11 @@
             </div>
          </div>
       </header>
+      <div class="page">
 
       <?= $content; ?>
-
+      
+      </div >
       <footer class="footer">
          <div class="footer__container _container">
             <div class="footer__body">

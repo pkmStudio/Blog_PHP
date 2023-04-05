@@ -21,14 +21,13 @@ Frontent первично завершен + появились планы но�
 
 ## Что сделано?
 
-1. Настроил полностью MainController.
-2. Создал БД для Блога (См. Файл SQL запросов).
-3. Написал логику работы loginAction, logoutAction, addUserAction (loginModel, logoutModel, addUserModel).
+1. Сверстал ЛК админки и страницы addWork, addPost, addUser 
+Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addPost.html
+Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addWork.html
+Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addUser.html
 
 ## Планы: 
-1. Сверстать ЛК админки (Я вижу совмещенный вариант шапки и боковой панели).
-2. Сверстать addUser, addWork (Под админпанель).
-3. Написать логику (addPost / addWork)Action и (addPost / addWork)Model
+1. Написать логику (addPost / addWork)Action и (addPost / addWork)Model
 
 ![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
 

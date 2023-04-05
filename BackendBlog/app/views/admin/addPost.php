@@ -1,6 +1,6 @@
 
-            <main class="page">
-               <div class="main__container _container">
+            <main>
+               <div class="main__container">
                   <section class="add-article">
                      <h1 class="add-article__title title">Добавление статьи</h1>
                      <form class="add-article__form" action="/add" method="POST" data-message="article">

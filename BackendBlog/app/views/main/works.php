@@ -1,5 +1,5 @@
 
-            <main class="page">
+            <main>
                <div class="main__container _container">
                   <section class="works">
                      <div class="works__head">

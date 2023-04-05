@@ -1,5 +1,5 @@
 
-            <main class="page">
+            <main>
                <div class="main__container _container">
                   <section class="login">
                      <h1 class="login__title title">Вход в админпанель</h1>
