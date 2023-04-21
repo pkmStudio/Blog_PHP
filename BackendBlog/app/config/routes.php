@@ -94,4 +94,21 @@ return
         'action' => 'deleteWork',
     ],
 
+    // Добавление Пользователя
+    'adduser' => [
+        'controller' => 'admin',
+        'action' => 'addUser',
+    ],
+
+    // Редактирование Пользователя
+    'edituser' => [
+        'controller' => 'admin',
+        'action' => 'editUser',
+    ],
+
+    // Удаление Пользователя
+    'deleteuser' => [
+        'controller' => 'admin',
+        'action' => 'deleteUser',
+    ],
 ];

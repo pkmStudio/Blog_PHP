@@ -222,28 +222,6 @@ body._lock {
      object-fit: contain;
 }
 
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.section-head__title {
-  font-size: 22px;
-  vertical-align: baseline;
-  line-height: 60px;
-}
-
-.section-head__link {
-  font-size: 16px;
-  color: #00A8CC;
-  transition: all 0.3s ease;
-}
-
-.section-head__link:hover {
-  color: #007f9c;
-}
-
 form::after {
   content: "Идет отправка..";
   padding-top: 50vh;
@@ -263,6 +241,49 @@ form::after {
 form._sending::after {
   opacity: 1;
   visibility: visible;
+}
+
+[data-title] {
+  position: relative;
+}
+
+[data-title]::after {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 0;
+}
+
+[data-title]::after {
+  content: attr(data-title);
+  /* Выводим текст */
+  background-color: rgba(165, 42, 135, 0.9);
+  color: #b3b3b3;
+  opacity: 0;
+  transition: 1s;
+  pointer-events: none;
+  width: 200px;
+  padding: 0.5em;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-title]:hover::after {
+  opacity: 1;
+}
+
+.showpass {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.showpass__label {
+  font-size: 20px;
+}
+
+.showpass__checkbox {
+  width: 30px;
+  height: 30px;
 }
 
 .header {
@@ -321,6 +342,48 @@ form._sending::after {
   text-align: center;
 }
 
+.aside {
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border-right: 3px solid #444;
+  border-bottom: 3px solid #444;
+  border-radius: 0 0 10px 0;
+}
+
+.aside__header {
+  margin-bottom: 30px;
+}
+
+.aside__body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aside__item-name {
+  margin-bottom: 10px;
+}
+
+.aside__button {
+  align-self: flex-end;
+  text-align: center;
+  font-size: 16px;
+}
+
+._admin {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+._admin main {
+  flex: 1 1 auto;
+}
+
+._admin aside {
+  align-self: flex-start;
+}
+
 .greetings {
   height: calc(100vh - 100px);
   display: flex;
@@ -353,6 +416,28 @@ form._sending::after {
 .content-greetings__photo {
   flex: 1 1 25%;
   text-align: center;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-head__title {
+  font-size: 22px;
+  vertical-align: baseline;
+  line-height: 60px;
+}
+
+.section-head__link {
+  font-size: 16px;
+  color: #00A8CC;
+  transition: all 0.3s ease;
+}
+
+.section-head__link:hover {
+  color: #007f9c;
 }
 
 .recent-posts {
@@ -544,6 +629,48 @@ form._sending::after {
   border-radius: 10px;
 }
 
+.add-work__title {
+  margin-bottom: 30px;
+}
+
+.add-work__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-work__label {
+  font-size: 20px;
+}
+
+.add-work__input {
+  margin-bottom: 30px;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.add-user__title {
+  margin-bottom: 30px;
+}
+
+.add-user__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-user__label {
+  font-size: 20px;
+}
+
+.add-user__input {
+  margin-bottom: 30px;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
 .about__title {
   margin-bottom: 16px;
 }
@@ -666,9 +793,9 @@ form._sending::after {
 			);
   }
 
-  .section-head__title {
+  .showpass__label {
     font-size: calc(
-				18px + 4 *
+				16px + 4 *
 					((100vw - 320px) / 880)
 			);
   }
@@ -697,6 +824,13 @@ form._sending::after {
   .greetings__title {
     margin-bottom: calc(
 				20px + 20 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .section-head__title {
+    font-size: calc(
+				18px + 4 *
 					((100vw - 320px) / 880)
 			);
   }
@@ -842,6 +976,48 @@ form._sending::after {
   }
 
   .add-article__textarea {
+    font-size: calc(
+				14px + 2 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-work__label {
+    font-size: calc(
+				16px + 4 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-work__input {
+    margin-bottom: calc(
+				15px + 15 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-work__input {
+    font-size: calc(
+				14px + 2 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-user__label {
+    font-size: calc(
+				16px + 4 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-user__input {
+    margin-bottom: calc(
+				15px + 15 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .add-user__input {
     font-size: calc(
 				14px + 2 *
 					((100vw - 320px) / 880)

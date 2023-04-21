@@ -17,17 +17,19 @@ Frontent первично завершен + появились планы но�
 
 Сейчас: Разработка Админ Панели
 
-#
+P.S. Я не пропал, просто теперь могу заходить реже.
 
 ## Что сделано?
 
-1. Сверстал ЛК админки и страницы addWork, addPost, addUser 
+1. Сделал методы addWork, addPost, addUser 
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addPost.html
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addWork.html
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addUser.html
 
 ## Планы: 
-1. Написать логику (addPost / addWork)Action и (addPost / addWork)Model
+1. Написать логику отображения (post / works / blog)Action и (post / works / blog)Model
+2. Переделать соответствующие страницы и сделать их динамическими.
+3. Добавить кнопки 'edit' и 'delete' к post и works
 
 ![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
 

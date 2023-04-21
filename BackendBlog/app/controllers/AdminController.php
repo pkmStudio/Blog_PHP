@@ -6,6 +6,10 @@ use app\core\Controller;
 
 class AdminController extends Controller
 {
+   public function __construct($route) {
+      parent::__construct($route);
+      $this->view->layout = 'admin';
+   }
    
    public function loginAction()
    {
@@ -53,6 +57,17 @@ class AdminController extends Controller
 
    public function addPostAction()
    {
+       //! Если форма не пустая.
+      if (!empty($_POST)) {
+         $result = $this->model->addPostModel();
+
+         if (isset($result['url'])) {
+            $this->view->redirectAJAX($result['url']);
+         } else {
+            $this->view->message($result);
+         }
+      }
+
       //echo 'Страница Добавить статью.';
       $this->view->render('Добавить статью');
    }
@@ -64,6 +79,34 @@ class AdminController extends Controller
    }
 
    public function deletePostAction()
+   {
+   }
+
+
+   public function addWorkAction()
+   {
+       //! Если форма не пустая.
+      if (!empty($_POST)) {
+         $result = $this->model->addWorkModel();
+
+         if (isset($result['url'])) {
+            $this->view->redirectAJAX($result['url']);
+         } else {
+            $this->view->message($result);
+         }
+      }
+
+      //echo 'Страница Добавить работу.';
+      $this->view->render('Добавить работу');
+   }
+
+   public function editWorkAction()
+   {
+      //echo 'Страница Редактирование работы.';
+      $this->view->render('Редактирование работы');
+   }
+
+   public function deleteWorkAction()
    {
    }
 }

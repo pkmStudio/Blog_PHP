@@ -23,6 +23,7 @@ return [
 	'admin' => [
 		'addPost',
 		'addWork',
+		'addUser',
 		'logout',
 		'editPost',
 		'deletePost',

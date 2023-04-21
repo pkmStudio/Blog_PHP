@@ -16,7 +16,7 @@ class MainController extends Controller
       $this->view->render('Главная страница');
    }
 
-   public function blogAction() // В моделе сделать загрузку 20 стетей с возможностью подгрузки
+   public function blogAction() // В моделе сделать загрузку 20 статей с возможностью подгрузки
    {
       $this->view->render('Блог');
    }

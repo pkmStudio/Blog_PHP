@@ -50,7 +50,7 @@
       <div class="page admin">
          
          <div class="_container _admin">
-
+            <?php if(isset($_SESSION['authorize']['who']) && $_SESSION['authorize']['who'] == 'admin'): ?>
             <aside class="aside">
                <div class="aside__header">
                   <h3 class="aside__title title">Панель админа</h3>
@@ -58,22 +58,23 @@
                <div class="aside__body">
                   <div class="aside__item">
                      <h4 class="aside__item-name sub-title">Посты</h4>
-                     <button class="aside__button button" data-tittle="Какая-то подсказка при всплытии ">Добавить</button>
-                     <button class="aside__button button" data-tittle="Добавить Работу">Найти</button>
+                     <a class="aside__button button" href="addpost" data-title="Какая-то подсказка при всплытии ">Добавить</a>
+                     <a class="aside__button button" href="/" data-title="Добавить Работу">Найти</a>
                   </div>
                   <div class="aside__item">
                      <h4 class="aside__item-name sub-title">Работы</h4>
-                     <button class="aside__button button" data-tittle="Добавить Работу">Добавить</button>
-                     <button class="aside__button button" data-tittle="Добавить Работу">Найти</button>
+                     <a class="aside__button button" href="addwork" data-title="Добавить Работу">Добавить</a>
+                     <a class="aside__button button" href="/" data-title="Добавить Работу">Найти</a>
                   </div>
                   <div class="aside__item">
                      <h4 class="aside__item-name sub-title">Пользователи</h4>
-                     <button class="aside__button button" data-tittle="Добавить Работу">Добавить</button>
-                     <button class="aside__button button" data-tittle="Добавить Работу">Найти</button>
+                     <a class="aside__button button" href="adduser" data-title="Добавить Работу">Добавить</a>
+                     <a class="aside__button button" href="/" data-title="Добавить Работу">Найти</a>
                   </div>
                   <a class="aside__button button" href="logout" data-tittle="">Выйти</a>
                </div>
             </aside>
+            <?php endif;?>
             <?= $content; ?>
          </div >
       </div >

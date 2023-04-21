@@ -31,14 +31,13 @@ abstract class Model {
 		return $query;
 	}
 
-	// Эта функция влозвращает результат запроса в виде объекта.
+	// Эта функция возвращает результат запроса в виде объекта.
 	public function row($sql, $params = []) {
 		$result = $this->query($sql, $params);
 		return $result->fetchAll(PDO::FETCH_OBJ);
 	}
 
 	// Эта функция выводит по колонке какого-то запроса. 
-	// ? Ясность не полная требует проверки.
 	public function column($sql, $params = []) {
 		$result = $this->query($sql, $params);
 		return $result->fetchColumn();
