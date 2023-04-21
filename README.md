@@ -22,8 +22,11 @@ P.S. Я не пропал, просто теперь могу заходить �
 ## Что сделано?
 
 1. Сделал методы addWork, addPost, addUser 
+
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addPost.html
+
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addWork.html
+
 Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addUser.html
 
 ## Планы: 
