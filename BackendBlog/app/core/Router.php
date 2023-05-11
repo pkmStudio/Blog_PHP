@@ -29,6 +29,7 @@ class Router
     // Эта функция прогоняет массив routes и к ключам(ссылкам) добавляет символы. Для дальнейшего сравнения в match.
     public function add($route, $params)
     {
+        $route = preg_replace('/{([a-z]+):([^\}]+)}/', '(?P<\1>\2)', $route);
         // Здесь мы добавляем к строке route по 2 символа с каждой стороны, что бы сделать из этого регулярное выражение.
         $route = '#^'.$route.'$#';
 
@@ -42,11 +43,19 @@ class Router
         // В переменную пишем глобальный массив, в котором смотрим часть ссылки после nameProject/, он же маршрут. И удаляем "/" в начале и конце.
         $url = $_SERVER['REQUEST_URI'];
         $url = trim($url, '/');
-
         // Перебираем массив маршрутов(ссылок) уже в регулярном виде, которые есть у нас на сайте. 
         foreach ($this->routes as $route => $params) {
             // Если находим совпадение, то пишем параметры в перменную $params и возвращаем true.
             if (preg_match($route, $url, $matches)) {
+
+                foreach ($matches as $key => $match) {
+                    if (is_string($key)) {
+                        if (is_numeric($match)) {
+                            $match = (int) $match;
+                        }
+                        $params[$key] = $match;
+                    }
+                }
                 $this->params = $params;
                 return true;
             }

@@ -106,3 +106,44 @@ form._sending::after{
 		height: 30px;
 	}
 }
+
+.pagination {
+   width: 50%;
+   display: flex;
+   justify-content: space-around;
+   margin: 0 auto;
+   margin-top: 30px;
+
+   @media (max-width: 767px) {
+      width: 100%;
+   }
+
+   //pagination__button
+   &__button {
+   @include adaptiv-font (20, 16, 1);
+   }
+
+   //pagination__button--disabled
+   &__button--disabled {
+      color: gray;
+      background-color: rgb(104, 104, 104);
+   }
+   
+
+}
+
+
+//==============
+.admin-panel {
+   display: flex;
+   gap: 20px;
+   justify-content: flex-end;
+
+   // .admin-panel__button
+   &__button {
+      @include adaptiv-font (18, 14, 1);
+      background-color: #db64ff;
+   }
+}
+
+//==============

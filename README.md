@@ -1,6 +1,6 @@
 
 
-# Блог v1.1.1
+# Блог v2
 
 
 I am learning Full Stack development.
@@ -12,27 +12,24 @@ Here I post my progress in my studies and projects that I have implemented.
 
 Ниже (см.фото) ты увидишь текущий план работ. Он не окончательный и будет дополняться. 
 
-Frontent первично завершен + появились планы новых страниц
-(Для себя: Добавить возможность комментировать статьи.)
-
-Сейчас: Разработка Админ Панели
-
-P.S. Я не пропал, просто теперь могу заходить реже.
+Стадия проекта: Первично завершен.
+Доступно по ссылке: https://pkmstudio.github.io/Blog_PHP/FrontendBlogSite/index.html
+Доступно по ссылке: https://pkmstudio.github.io/Blog_PHP/FrontendBlogSite/addPost.html
 
 ## Что сделано?
 
-1. Сделал методы addWork, addPost, addUser 
+1. Сделал методы editWork, editPost
+2. Написал логику отображения (post / works / blog)Action и (post / works / blog)Model
+3. Переделал соответствующие страницы и сделать их динамическими.
+4. Добавил кнопки 'edit' и 'delete' к post и works
+5. Сделал ЛК админа
 
-Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addPost.html
 
-Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addWork.html
-
-Доступно по ссылке: https://pmkstudio.github.io/Blog_PHP/FrontendBlogSite/addUser.html
-
-## Планы: 
-1. Написать логику отображения (post / works / blog)Action и (post / works / blog)Model
-2. Переделать соответствующие страницы и сделать их динамическими.
-3. Добавить кнопки 'edit' и 'delete' к post и works
+## Планы (ВОЗМОЖНЫЕ): 
+1. Добавить поиск по статьям.
+2. Добавить возможность комментировать статьи.
+3. Добавить возможность загружать и хранить картинки от работ.
+4. Добавить переключение страниц в шапке.
 
 ![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
 

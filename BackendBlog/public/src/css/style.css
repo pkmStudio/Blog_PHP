@@ -286,6 +286,34 @@ form._sending::after {
   height: 30px;
 }
 
+.pagination {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.pagination__button {
+  font-size: 20px;
+}
+
+.pagination__button--disabled {
+  color: gray;
+  background-color: rgb(104, 104, 104);
+}
+
+.admin-panel {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.admin-panel__button {
+  font-size: 18px;
+  background-color: #db64ff;
+}
+
 .header {
   width: 100%;
   margin-bottom: 50px;
@@ -800,6 +828,20 @@ form._sending::after {
 			);
   }
 
+  .pagination__button {
+    font-size: calc(
+				16px + 4 *
+					((100vw - 320px) / 880)
+			);
+  }
+
+  .admin-panel__button {
+    font-size: calc(
+				14px + 4 *
+					((100vw - 320px) / 880)
+			);
+  }
+
   .header {
     margin-bottom: calc(
 				30px + 20 *
@@ -1063,6 +1105,12 @@ form._sending::after {
 @media (max-width: 767.98) {
   .sub-title {
     font-weight: 500;
+  }
+}
+
+@media (max-width: 767px) {
+  .pagination {
+    width: 100%;
   }
 }
 

@@ -13,6 +13,131 @@ class AdminModel extends Model
 		return $userPassword;
 	}
 
+	// Модуль проверки на существование Статьи / Работы
+	public function isExists($id, $tableName) {
+		$params = ['id' => $id,];
+
+		return $this->column("SELECT id FROM $tableName WHERE id = :id", $params);
+	}
+
+	// Модуль удаление Статьи / Работы
+	public function deleteModel($id, $tableName)
+	{
+		$params = ['id' => $id];
+
+		$title = $this->column("SELECT `title` FROM $tableName WHERE `id` = :id", $params);
+
+		$this->query("DELETE  FROM $tableName WHERE `id` = :id", $params);
+		
+		return $title;
+	}
+
+	// Модуль получение всех данных Статьи / Работы
+	public function getData($id, $tableName) 
+	{
+		$params = ['id' => $id,];
+
+		return $this->row("SELECT * FROM $tableName WHERE id = :id", $params)[0];
+	}
+
+	// Модуль валидации статьи
+	public function postValidate()
+	{
+
+		$paramsOfArticle = [
+			'articleTitle' => trim(filter_var($_POST['articleTitle'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'articleAnons' => trim(filter_var($_POST['articleAnons'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'articleTags' => trim(filter_var($_POST['articleTags'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'articleText' => trim($_POST['articleText'])];
+
+		// Разворачиваем массив на переменные.
+		extract($paramsOfArticle);
+
+		// Начинаем проверку формы
+		if (empty($articleTitle)) {
+			// Поле Название статьи
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Название статьи" пустым'];
+			return $result;
+
+		} elseif (strlen($articleTitle) < 10) {
+			$result = ['status' => 'Error', 'message' => 'В поле "Название статьи" должно быть больше 10-х символов'];
+			return $result;
+		}
+
+		if (empty($articleAnons)) {
+			// Поле Логин
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Анонс статьи" пустым'];
+			return $result;
+
+		} elseif (strlen($articleAnons) < 70) {
+			$result = ['status' => 'Error', 'message' => 'В поле "Анонс статьи" должно быть больше 70 символов'];
+			return $result;
+		}
+
+		if (empty($articleText)) {
+			// Поле Логин
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Текст статьи" пустым'];
+			return $result;
+
+		} elseif (strlen($articleText) < 70) {
+			$result = ['status' => 'Error', 'message' => 'В поле "Текст статьи" должно быть больше 70 символов'];
+			return $result;
+		}
+
+		$result = ['status' => 'Done', 'params' => $paramsOfArticle];
+		return $result;
+	}
+
+	// Модуль валидации работы
+	public function workValidate() 
+	{
+
+		if (filter_var($_POST['workLink'], FILTER_VALIDATE_URL)){
+			$workLink = trim(filter_var($_POST['workLink'], FILTER_SANITIZE_URL));
+		} else {
+			$workLink = '';
+		}
+
+		$paramsOfWork = [
+			'workTitle' => trim(filter_var($_POST['workTitle'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'workAnons' => trim(filter_var($_POST['workAnons'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'workTags' => trim(filter_var($_POST['workTags'], FILTER_SANITIZE_SPECIAL_CHARS)),
+			'workLink' => $workLink];
+
+		// Разворачиваем массив на переменные.
+		extract($paramsOfWork);
+
+		// Начинаем проверку формы
+		if (empty($workTitle)) {
+			// Поле Название работы
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Название работы" пустым'];
+			return $result;
+
+		} elseif (strlen($workTitle) < 10) {
+			$result = ['status' => 'Error', 'message' => 'В поле "Название работы" должно быть больше 10-х символов'];
+			return $result;
+		}
+
+		if (empty($workAnons)) {
+			// Поле Логин
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Описание работы" пустым'];
+			return $result;
+
+		} elseif (strlen($workAnons) < 70) {
+			$result = ['status' => 'Error', 'message' => 'В поле "Описание работы" должно быть больше 70 символов'];
+			return $result;
+		}
+
+		if (empty($workLink)) {
+			// Поле Логин
+			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Ссылка" пустым'];
+			return $result;
+		}
+
+		$result = ['status' => 'Done', 'params' => $paramsOfWork];
+		return $result;
+	}
+
 	// Модуль при входе / логинации
 	public function loginModel()
 	{
@@ -71,7 +196,7 @@ class AdminModel extends Model
 		unset($_SESSION['admin']); 
 		session_destroy();
 
-		$result = ['status' => 'Done', 'url' => '/admin'];
+		$result = ['status' => 'Done', 'url' => 'admin'];
 		return $result;
 	}
 
@@ -123,104 +248,72 @@ class AdminModel extends Model
 		return $result;
 	}
 
-	// Модуль при добавлении работы
+	// Модуль при добавлении статьи
 	public function addPostModel()
 	{
-		$workTitle = trim(filter_var($_POST['workTitle'], FILTER_SANITIZE_SPECIAL_CHARS));
-		$workAnons = trim(filter_var($_POST['workAnons'], FILTER_SANITIZE_SPECIAL_CHARS));
-		$workTags = trim(filter_var($_POST['workTags'], FILTER_SANITIZE_SPECIAL_CHARS));
-		$workText = trim(filter_var($_POST['workText'], FILTER_SANITIZE_SPECIAL_CHARS));
-
-		// Начинаем проверку формы
-		if (empty($workTitle)) {
-			// Поле Название работы
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Название работы" пустым'];
-			return $result;
-
-		} elseif (strlen($workTitle) < 10) {
-			$result = ['status' => 'Error', 'message' => 'В поле "Название работы" должно быть больше 10-х символов'];
-			return $result;
-
-		}
-
-		if (empty($workAnons)) {
-			// Поле Логин
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Анонс работы" пустым'];
-			return $result;
-
-		} elseif (strlen($workAnons) < 70) {
-			$result = ['status' => 'Error', 'message' => 'В поле "Анонс работы" должно быть больше 70 символов'];
-			return $result;
-
-		}
-
-		if (empty($workText)) {
-			// Поле Логин
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Текст работы" пустым'];
-			return $result;
-
-		} elseif (strlen($workText) < 140) {
-			$result = ['status' => 'Error', 'message' => 'В поле "Текст работы" должно быть больше 70 символов'];
-			return $result;
-
-		}
+		$result = $this->postValidate();
+		if ($result['status'] !== "Done") {return $result;}
 
 		// Если все нормально
-		$params = ['title' => $workTitle, 'anons' => $workAnons, 'text' => $workText, 'date' => time(), 'tags' => $workTags, 'author' => $_SESSION['authorize']['login']];
+		extract($result['params']);
 
-		$this->query("INSERT INTO `works` (`title`, `anons`, `text`, `date`, `tags`, `author`) VALUE (:title, :anons, :text, :date, :tags, :author)", $params);
+		$params = ['title' => $articleTitle, 'anons' => $articleAnons, 'text' => $articleText, 'date' => time(), 'tags' => $articleTags, 'author' => $_SESSION['authorize']['login']];
+
+		$this->query("INSERT INTO `articles` (`title`, `anons`, `text`, `date`, `tags`, `author`) VALUE (:title, :anons, :text, :date, :tags, :author)", $params);
 		
-		$result = ['status' => 'Done', 'url' => '/'];
+		$result = ['status' => 'Done', 'url' => '/blog'];
 		return $result;
 	}
 
 	// Модуль при добавлении работы
 	public function addWorkModel()
 	{
-		$workTitle = trim(filter_var($_POST['workTitle'], FILTER_SANITIZE_SPECIAL_CHARS));
-		$workAnons = trim(filter_var($_POST['workAnons'], FILTER_SANITIZE_SPECIAL_CHARS));
-		$workTags = trim(filter_var($_POST['workTags'], FILTER_SANITIZE_SPECIAL_CHARS));
-		if (filter_var($_POST['workLink'], FILTER_VALIDATE_URL)){
-			$workLink = trim(filter_var($_POST['workLink'], FILTER_SANITIZE_URL));
-		} else {
-			$workLink = '';
-		}
-
-		// Начинаем проверку формы
-		if (empty($workTitle)) {
-			// Поле Название работы
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Название работы" пустым'];
-			return $result;
-
-		} elseif (strlen($workTitle) < 10) {
-			$result = ['status' => 'Error', 'message' => 'В поле "Название работы" должно быть больше 10-х символов'];
-			return $result;
-
-		}
-
-		if (empty($workAnons)) {
-			// Поле Логин
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Описание работы" пустым'];
-			return $result;
-
-		} elseif (strlen($workAnons) < 70) {
-			$result = ['status' => 'Error', 'message' => 'В поле "Описание работы" должно быть больше 70 символов'];
-			return $result;
-
-		}
-
-		if (empty($workLink)) {
-			// Поле Логин
-			$result = ['status' => 'Error', 'message' => 'Нельзя оставлять поле "Ссылка" пустым'];
-			return $result;
-		}
+		$result = $this->workValidate();
+		if ($result['status'] !== "Done") {return $result;}
 
 		// Если все нормально
+		extract($result['params']);
+
 		$params = ['title' => $workTitle, 'anons' => $workAnons, 'link' => $workLink, 'date' => time(), 'tags' => $workTags];
 
 		$this->query("INSERT INTO `works` (`title`, `anons`, `link`, `date`, `tags`) VALUE (:title, :anons, :link, :date, :tags)", $params);
 		
-		$result = ['status' => 'Done', 'url' => '/'];
+		$result = ['status' => 'Done', 'url' => '/works'];
+		return $result;
+	}
+
+	// Модуль редактирования статьи
+	public function editPostModel($articleId)
+	{
+		$result = $this->postValidate();
+		if ($result['status'] !== "Done") {return $result;}
+
+		// Если все нормально
+		extract($result['params']);
+
+		$params = ['title' => $articleTitle, 'anons' => $articleAnons, 'text' => $articleText, 'tags' => $articleTags, 'id' => $articleId];
+
+		$this->query('UPDATE `articles` SET `title` = :title, `anons` = :anons, `text` = :text, `tags` = :tags WHERE `id` = :id', $params);
+
+		$result = ['status' => 'Done', 'url' => '../post/' . $articleId];
+		return $result;
+
+	}
+
+	// Модуль редактирования Работы
+	public function editWorkModel($id)
+	{
+		$result = $this->workValidate();
+		if ($result['status'] !== "Done") {return $result;}
+
+		// Если все нормально
+		extract($result['params']);
+
+		$params = ['title' => $workTitle, 'anons' => $workAnons, 'link' => $workLink, 'date' => time(), 'tags' => $workTags, 'id' => $id];
+
+		$this->query('UPDATE `works` SET `title` = :title, `anons` = :anons, `text` = :text, `tags` = :tags WHERE `id` = :id', $params);
+
+		$result = ['status' => 'Done', 'url' => '/works'];
 		return $result;
 	}
 

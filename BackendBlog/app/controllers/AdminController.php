@@ -32,9 +32,7 @@ class AdminController extends Controller
    {
       $result = $this->model->logoutModel();
       if (isset($result['url'])) {
-         $this->view->redirectAJAX($result['url']);
-      } else {
-         $this->view->redirectServer('/');
+         $this->view->redirectServer($result['url']);
       }
    }
 
@@ -73,13 +71,41 @@ class AdminController extends Controller
    }
 
    public function editPostAction()
-   {
+   {   
+      //! Если статьи не существует.   
+      if (!$this->model->isExists($this->route['id'], "articles")) {
+      $this->view->errorCode(404);
+      }
+
+      //! Если форма не пустая.
+      if (!empty($_POST)) {
+         $result = $this->model->editPostModel($this->route['id']);
+
+         if (isset($result['url'])) {
+            $this->view->redirectAJAX($result['url']);
+         } else {
+            $this->view->message($result);
+         }
+		}
+
+      //! Если ток нажали Редактировть.
+      $vars = [
+			'post' => $this->model->getData($this->route['id'], "articles"),
+         'id' => $this->route['id']
+		];
+
       //echo 'Страница Редактирование статьи.';
-      $this->view->render('Редактирование статьи');
+      $this->view->render('Редактирование статьи', $vars);
    }
 
    public function deletePostAction()
    {
+      if (!$this->model->isExists($this->route['id'], "articles")) {
+			$this->view->errorCode(404);
+		}
+
+      $articleTitle = $this->model->deleteModel($this->route['id'], "articles");
+      exit('Удален пост: ' . $articleTitle);
    }
 
 
@@ -102,11 +128,39 @@ class AdminController extends Controller
 
    public function editWorkAction()
    {
+      //! Если статьи не существует.   
+      if (!$this->model->isExists($this->route['id'], "works")) {
+         $this->view->errorCode(404);
+         }
+   
+         //! Если форма не пустая.
+         if (!empty($_POST)) {
+            $result = $this->model->editWorkModel($this->route['id']);
+   
+            if (isset($result['url'])) {
+               $this->view->redirectAJAX($result['url']);
+            } else {
+               $this->view->message($result);
+            }
+         }
+   
+         //! Если ток нажали Редактировть.
+         $vars = [
+            'post' => $this->model->getData($this->route['id'], "works"),
+            'id' => $this->route['id']
+         ];
+
       //echo 'Страница Редактирование работы.';
       $this->view->render('Редактирование работы');
    }
 
    public function deleteWorkAction()
    {
+      if (!$this->model->isExists($this->route['id'], "works")) {
+			$this->view->errorCode(404);
+		}
+
+      $workTitle = $this->model->deleteModel($this->route['id'], "works");
+      exit('Удалена информация о работе: ' . $workTitle);
    }
 }

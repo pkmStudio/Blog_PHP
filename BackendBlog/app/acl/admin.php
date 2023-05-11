@@ -29,5 +29,6 @@ return [
 		'deletePost',
 		'editWork',
 		'deleteWork',
+		'login',
 	],
 ];

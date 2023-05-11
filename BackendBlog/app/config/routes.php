@@ -23,6 +23,11 @@ return
         'action' => 'blog',
     ],
 
+    'blog/{page:\d+}' => [
+        'controller' => 'main',
+        'action' => 'blog',
+    ],
+
     // Работы
     'works' => [
         'controller' => 'main',
@@ -36,7 +41,7 @@ return
     ],
 
     // Статья
-    'post' => [
+    'post/{id:\d+}' => [
         'controller' => 'main',
         'action' => 'post',
     ],
@@ -65,13 +70,13 @@ return
     ],
 
     // Редактирование Статьи
-    'editpost' => [
+    'editpost/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'editPost',
     ],
 
     // Удаление Статьи
-    'deletepost' => [
+    'deletepost/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'deletePost',
     ],
@@ -83,13 +88,13 @@ return
     ],
 
     // Редактирование Работы
-    'editwork' => [
+    'editwork/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'editWork',
     ],
 
     // Удаление Работы
-    'deletework' => [
+    'deletework/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'deleteWork',
     ],
@@ -101,13 +106,13 @@ return
     ],
 
     // Редактирование Пользователя
-    'edituser' => [
+    'edituser/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'editUser',
     ],
 
     // Удаление Пользователя
-    'deleteuser' => [
+    'deleteuser/{id:\d+}' => [
         'controller' => 'admin',
         'action' => 'deleteUser',
     ],
