@@ -31,6 +31,6 @@ Here I post my progress in my studies and projects that I have implemented.
 3. Добавить возможность загружать и хранить картинки от работ.
 4. Добавить переключение страниц в шапке.
 
-![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.png)
+![Скелет Блога](https://github.com/pmkStudio/Blog_PHP/blob/main/map_of_blogv2.0.png)
 
 А ты, кто читает это, желаю почаще улыбаться и стремиться к совершенству!
